@@ -97,10 +97,6 @@ tr:first-child {
     text-align: center;
 }
 
-.btn-form-fullwidth {
-    width: 100%;
-}
-
 .btn-form.btn-danger {
     background-color: var(--error-color);
 }
@@ -1086,6 +1082,10 @@ abbr:hover {
 .song-detail-box-secondary-row {
     display: flex;
     height: 96px;
+}
+
+.btn-form-fullwidth, .btn-form.btn-form-fullwidth {
+    width: 100%;
 }
 
 /*
