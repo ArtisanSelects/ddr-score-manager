@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "https://ddr-score-manager.herokuapp.com/api/v1/scores",
+    baseURL: "https://ddr-score-manager.netlify.app/api",
     withCredentials: false,
     headers: {
         "Content-type": "application/json",  

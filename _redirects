@@ -1,0 +1,2 @@
+/api/* https://ddr-score-manager.herokuapp.com/api/v1/scores/:splat 200
+/* /index.html 200
