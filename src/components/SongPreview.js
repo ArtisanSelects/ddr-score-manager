@@ -37,9 +37,6 @@ export default function SongPreview({song}) {
 
     const handleTrigger = async (e) => {
         hideAll({duration: 0});
-        if (window.outerWidth < 900 || window.screen.width < 900) {
-            history.push(`/songs/${song._id}`);
-        }
         if (!gotJacket) {
             try {
                 const response = await SongsDataService.getSongJacket(song._id);

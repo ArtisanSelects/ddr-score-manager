@@ -154,6 +154,10 @@ function App() {
             <Route exact path='/about' render={(props) => (
               <About />
             )} />
+
+            <Route exact path='*' render={() => (
+              <Homepage isAuthed={isAuthed} />
+            )} />
             
           </Switch> ) : ( <div className="msg-container">
             {hasErrors ? (
