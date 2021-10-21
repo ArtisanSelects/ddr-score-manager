@@ -13,6 +13,8 @@
     --btn-color-main-hover: rgba(255, 255, 255, 0.45);
     --nav-color: darkred;
     --error-color: #CF6679;
+    --error-color-hover: #d8798a;
+    --gofc-color-hover: rgba(128, 222, 229, 0.6);
 }
 
 /*
@@ -101,8 +103,16 @@ tr:first-child {
     background-color: var(--error-color);
 }
 
+.btn-form.btn-danger:hover {
+    background-color: var(--error-color-hover);
+}
+
 .btn-form.btn-cancel {
     background-color: var(--gofc-color);
+}
+
+.btn-form.btn-cancel:hover {
+    background-color: var(--gofc-color-hover);
 }
 
 .text-mfc {
