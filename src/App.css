@@ -1207,6 +1207,10 @@ abbr:hover {
         display: table-cell;
     }
 
+    .song-link.hide-on-desktop {
+        display: block;
+    }
+
     .mobile-score {
         font-weight: bolder;
         font-size: 1.1em;

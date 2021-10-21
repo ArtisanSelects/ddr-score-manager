@@ -10,17 +10,20 @@ export default function SongPreview({song}) {
 
     const [jacketSrc, setJacketSrc] = useState("");
     const [gotJacket, setGotJacket] = useState(false);
+
     const history = useHistory();
-    
+
+    let isRendered = true;
+
     useEffect(() => {
-        if (song.songJacket) {
-            setJacketSrc(`data:image/jpg;base64,${Buffer.from(song.songJacket).toString("base64")}`);
+        return () => {
+            isRendered = false;
         }
-    }, [song.songJacket]);
+    }, []);
     
     const SongPreviewBox = () => {
         return (
-                <div className="song-preview-box hide-on-mobile">
+                <div className="song-preview-box">
                     <div className="song-preview-box-details">
                         <p><strong>Title:</strong> {song.title}</p>
                         <p><strong>Artist:</strong> {song.artist}</p>
@@ -40,8 +43,10 @@ export default function SongPreview({song}) {
         if (!gotJacket) {
             try {
                 const response = await SongsDataService.getSongJacket(song._id);
-                setJacketSrc(`data:image/jpg;base64,${Buffer.from(response.data).toString("base64")}`);
-                setGotJacket(true);
+                if (isRendered) {
+                    setJacketSrc(`data:image/jpg;base64,${Buffer.from(response.data).toString("base64")}`);
+                    setGotJacket(true);
+                }
             } catch (err) {
                 return;
             } 
@@ -49,10 +54,14 @@ export default function SongPreview({song}) {
     }
 
     return (
+
         <td>
-            <Tippy content={<SongPreviewBox />} interactive={true} interactiveBorder={10} placement={'right'} onTrigger={handleTrigger} delay={100} >
-                <Link className="song-link" to={"/songs/"+song._id}>{song.title}<br/>({song.chartDifficulty}, {song.difficulty})</Link>
-            </Tippy>
+            <div className="hide-on-mobile">
+                <Tippy content={<SongPreviewBox />} interactive={true} interactiveBorder={10} placement={'right'} onTrigger={handleTrigger} delay={100} >
+                    <Link to={"/songs/"+song._id}>{song.title}<br/>({song.chartDifficulty}, {song.difficulty})</Link>
+                </Tippy>
+            </div>
+            <div className="hide-on-desktop song-link"><Link to={"/songs/"+song._id}>{song.title}<br/>({song.chartDifficulty}, {song.difficulty})</Link></div>
         </td>
     );
 }
