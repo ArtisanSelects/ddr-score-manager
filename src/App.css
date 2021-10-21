@@ -159,6 +159,10 @@ tr:first-child {
     display: none;
 }
 
+input[type="submit"] {
+    display: block;
+}
+
 /*
     NAV/HEADER
 */
