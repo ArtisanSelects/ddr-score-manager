@@ -27,14 +27,14 @@ export default function statisticsCalculationService(songList) {
         const difficultyShorthands = {
             'Beginner': 'BSP',
             'Basic': 'BSP',
-            'Difficulty': 'DSP',
+            'Difficult': 'DSP',
             'Expert': 'ESP',
             'Challenge': 'CSP'
         };
         if (song.score) {
             let score = song.score;
             statsheet.statuses[score.status]++;
-            if (score.status !== "Unplayed" && score.miss+score.boo < 4) {
+            if (score.status !== "Unplayed" && score.miss+score.boo+score.good < 4) {
                 statsheet.redLampSongs++;
             }
             if (score.grade === 'AAA') {
