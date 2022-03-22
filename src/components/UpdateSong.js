@@ -117,7 +117,7 @@ export default function UpdateSong(props) {
     const difficulties = [...Array(6).keys()].map(i => i+14);
     const chartDifficulties = ["Beginner", "Basic", "Difficult", "Expert", "Challenge"];
     const chartMode = ["Single", "Double"];
-    const appearances = ['DDR A20 PLUS', 'DDR A20', 'DDR A', 'DDR 2014', 'DDR 2013', 'DDR X3', 'DDR X2', 'DDR X', 'SuperNOVA2', 'SuperNOVA', 'EXTREME', 'MAX2', 'MAX', '5th Mix', '4th Mix', '3rd Mix', '2nd Mix', '1st Mix', 'Other'];
+    const appearances = ['DDR A3', 'DDR A20 PLUS', 'DDR A20', 'DDR A', 'DDR 2014', 'DDR 2013', 'DDR X3', 'DDR X2', 'DDR X', 'SuperNOVA2', 'SuperNOVA', 'EXTREME', 'MAX2', 'MAX', '5th Mix', '4th Mix', '3rd Mix', '2nd Mix', '1st Mix', 'Other'];
 
     return (
         <div>
